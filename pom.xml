@@ -24,13 +24,13 @@
         <connection>scm:git:https://github.com/Elie-kahwaji/release-test.git</connection>
         <url>http://github.com/Elie-kahwaji/release-test.git</url>
         <developerConnection>scm:git:https://github.com/Elie-kahwaji/release-test.git</developerConnection>
-        <tag>v0.0.2</tag>
+        <tag>v@{project.version}</tag>
   </scm>
 
 
     <groupId>com.example</groupId>
     <artifactId>demo-release</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>demo-release</name>
     <description>Demo project for Spring Boot</description>
     <properties>
