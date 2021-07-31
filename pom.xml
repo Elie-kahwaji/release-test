@@ -23,13 +23,13 @@
         </repository>
     </distributionManagement>
 
-<!--    <scm>-->
-<!--        <connection>scm:git:https://github.com/Elie-kahwaji/release-test.git</connection>-->
-<!--        <url>http://github.com/Elie-kahwaji/release-test.git</url>-->
-<!--        <developerConnection>scm:git:https://github.com/Elie-kahwaji/release-test.git-->
-<!--        </developerConnection>-->
-<!--        <tag>v@{project.version}</tag>-->
-<!--    </scm>-->
+    <scm>
+        <connection>scm:git:https://github.com/Elie-kahwaji/release-test.git</connection>
+        <url>http://github.com/Elie-kahwaji/release-test.git</url>
+        <developerConnection>scm:git:https://github.com/Elie-kahwaji/release-test.git
+        </developerConnection>
+        <tag>v@{project.version}</tag>
+    </scm>
 
 
     <groupId>com.example</groupId>
