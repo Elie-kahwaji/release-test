@@ -34,7 +34,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>demo-release</artifactId>
-    <version>0.0.4</version>
+    <version>0.1.0-SNAPSHOT</version>
     <name>demo-release</name>
     <description>Demo project for Spring Boot</description>
     <properties>
