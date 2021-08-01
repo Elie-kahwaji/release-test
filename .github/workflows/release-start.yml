@@ -28,4 +28,4 @@ jobs:
           java-package: jdk
     - name: Create Release Branch
       working-directory: github-actions-java-maven
-      run: mvn -B gitflow:release-start
+      run: mvn -B verify
