@@ -37,6 +37,6 @@ jobs:
       run: mvn -B gitflow:release-start
       
     - name: Echo branch name
-      run: echo ${{github.ref})
+      run: echo ${{github.ref}}
     - name: Push release branch
       run: git push --set-upstream origin ${GITHUB_REF##*/} 
