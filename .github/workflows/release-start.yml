@@ -35,3 +35,5 @@ jobs:
         maven-version: 3.5.4
     - name: Create Release Branch
       run: mvn -B gitflow:release-start
+    - name: Push release branch
+      run: git push --set-upstream origin 
