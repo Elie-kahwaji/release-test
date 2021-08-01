@@ -11,9 +11,12 @@ on:
 jobs:
  start-realease:
   name: Start Release Workflow
+  
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
+    - run: git config --global user.email "workflow@example.com"
+    - run: git config --global user.name "Workflow"
     - uses: actions/cache@v2
       with:
         path: ~/.m2/repository
