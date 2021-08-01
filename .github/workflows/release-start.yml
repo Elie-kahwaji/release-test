@@ -36,7 +36,7 @@ jobs:
     - name: Create Release branch   
       run: mvn -B gitflow:release-start
     - name: Get Release Branch
-      run: release_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+      run: export release_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
     - name: Echo branch name
       run: echo $release_branch
     - name: Push release branch
