@@ -38,6 +38,6 @@ jobs:
     - name: Get Release Branch
       run: release_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
     - name: Echo branch name
-      run: echo "$release_branch"
+      run: echo $release_branch
     - name: Push release branch
       run: git push --set-upstream origin ${GITHUB_REF##*/} 
