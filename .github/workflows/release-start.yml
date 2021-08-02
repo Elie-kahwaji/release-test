@@ -37,7 +37,5 @@ jobs:
       run: mvn -B gitflow:release-start
     - name: Get Release Branch
       run: git branch --show-current > release_branch
-    - name: Bump Version abd Push develop branch
-      run: git push --set-upstream origin ${GITHUB_REF##*/} 
     - name: Push Release branch
       run: git push --set-upstream origin $(cat release_branch)
