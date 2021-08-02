@@ -33,6 +33,8 @@ jobs:
       uses: stCarolas/setup-maven@v4
       with:
         maven-version: 3.5.4
+    - name: Pull Branches  
+      run: git pull   
     - name: Finilize Release branch   
       run: mvn -B gitflow:release-finish
    
