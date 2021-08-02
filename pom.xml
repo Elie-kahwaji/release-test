@@ -97,6 +97,7 @@
                     <verbose>true</verbose>
                     <skipFeatureVersion>true</skipFeatureVersion>
                    <skipMergeDevBranch>false</skipMergeDevBranch>
+                    <pushRemote>true</pushRemote>
                     <gitFlowConfig>
                         <productionBranch>master</productionBranch>
                         <developmentBranch>develop</developmentBranch>
@@ -105,6 +106,7 @@
                         <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
                         <versionTagPrefix />
                         <origin>origin</origin>
+
                     </gitFlowConfig>
                     <commitDevelopmentVersionAtStart>true</commitDevelopmentVersionAtStart>
                     <versionDigitToIncrement>1</versionDigitToIncrement>
