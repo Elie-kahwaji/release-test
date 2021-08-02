@@ -100,9 +100,10 @@
                     <skipFeatureVersion>true</skipFeatureVersion>
                     <skipMergeDevBranch>false</skipMergeDevBranch>
                     <pushRemote>true</pushRemote>
-                    <skipTag>true</skipTag>
+                    <skipTag>false</skipTag>
                     <keepBranch>true</keepBranch>
                     <fetchRemote>true</fetchRemote>
+                    <releaseMergeNoFF>false</releaseMergeNoFF>
                     <gitFlowConfig>
                         <productionBranch>master</productionBranch>
                         <developmentBranch>develop</developmentBranch>
