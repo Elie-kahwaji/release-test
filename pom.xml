@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.3</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-<!--    <distributionManagement>-->
-<!--        &lt;!&ndash;        <snapshotRepository>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <id>platform-artifact-registry</id>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <url>artifactregistry://us-central1-maven.pkg.dev/PROJECT/quickstart-maven-repo</url>&ndash;&gt;-->
-<!--        &lt;!&ndash;        </snapshotRepository>&ndash;&gt;-->
+    <!--    <distributionManagement>-->
+    <!--        &lt;!&ndash;        <snapshotRepository>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <id>platform-artifact-registry</id>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <url>artifactregistry://us-central1-maven.pkg.dev/PROJECT/quickstart-maven-repo</url>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </snapshotRepository>&ndash;&gt;-->
 
-<!--        <repository>-->
-<!--            <id>github</id>-->
-<!--            <name>GitHub OWNER Apache Maven Packages</name>-->
-<!--            <url>https://maven.pkg.github.com/Elie-kahwaji/release-test</url>-->
-<!--        </repository>-->
-<!--    </distributionManagement>-->
+    <!--        <repository>-->
+    <!--            <id>github</id>-->
+    <!--            <name>GitHub OWNER Apache Maven Packages</name>-->
+    <!--            <url>https://maven.pkg.github.com/Elie-kahwaji/release-test</url>-->
+    <!--        </repository>-->
+    <!--    </distributionManagement>-->
 
     <scm>
         <connection>scm:git:https://github.com/Elie-kahwaji/release-test.git</connection>
@@ -32,7 +34,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>demo-release</artifactId>
-    <version>0.17.3</version>
+    <version>0.19.0-SNAPSHOT</version>
     <name>demo-release</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -63,19 +65,19 @@
             </plugin>
 
 
-            <!--            <plugin>-->
-            <!--                <groupId>org.codehaus.mojo</groupId>-->
-            <!--                <artifactId>build-helper-maven-plugin</artifactId>-->
-            <!--                <version>3.2.0</version>-->
-            <!--                <executions>-->
-            <!--                    <execution>-->
-            <!--                        <id>parse-version</id>-->
-            <!--                        <goals>-->
-            <!--                            <goal>parse-version</goal>-->
-            <!--                        </goals>-->
-            <!--                    </execution>-->
-            <!--                </executions>-->
-            <!--            </plugin>-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>parse-version</id>
+                        <goals>
+                            <goal>parse-version</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -87,50 +89,51 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
                     <remoteTagging>false</remoteTagging>
+                    <developmentVersion>${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.0-SNAPSHOT</developmentVersion>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.amashchenko.maven.plugin</groupId>
-                <artifactId>gitflow-maven-plugin</artifactId>
-                <version>1.16.0</version>
-                <configuration>
-                    <installProject>true</installProject>
-                    <verbose>true</verbose>
-                    <skipFeatureVersion>true</skipFeatureVersion>
-                    <skipMergeDevBranch>false</skipMergeDevBranch>
-                    <pushRemote>true</pushRemote>
-                    <skipTag>false</skipTag>
-                    <keepBranch>true</keepBranch>
-                    <fetchRemote>false</fetchRemote>
-                    <gitFlowConfig>
-                        <productionBranch>master</productionBranch>
-                        <developmentBranch>develop</developmentBranch>
-                        <featureBranchPrefix>feature/</featureBranchPrefix>
-                        <releaseBranchPrefix>release/</releaseBranchPrefix>
-                        <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
-                        <versionTagPrefix />
-                        <origin>origin</origin>
+            <!--            <plugin>-->
+            <!--                <groupId>com.amashchenko.maven.plugin</groupId>-->
+            <!--                <artifactId>gitflow-maven-plugin</artifactId>-->
+            <!--                <version>1.16.0</version>-->
+            <!--                <configuration>-->
+            <!--                    <installProject>true</installProject>-->
+            <!--                    <verbose>true</verbose>-->
+            <!--                    <skipFeatureVersion>true</skipFeatureVersion>-->
+            <!--                    <skipMergeDevBranch>false</skipMergeDevBranch>-->
+            <!--                    <pushRemote>true</pushRemote>-->
+            <!--                    <skipTag>false</skipTag>-->
+            <!--                    <keepBranch>true</keepBranch>-->
+            <!--                    <fetchRemote>false</fetchRemote>-->
+            <!--                    <gitFlowConfig>-->
+            <!--                        <productionBranch>master</productionBranch>-->
+            <!--                        <developmentBranch>develop</developmentBranch>-->
+            <!--                        <featureBranchPrefix>feature/</featureBranchPrefix>-->
+            <!--                        <releaseBranchPrefix>release/</releaseBranchPrefix>-->
+            <!--                        <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>-->
+            <!--                        <versionTagPrefix />-->
+            <!--                        <origin>origin</origin>-->
 
-                    </gitFlowConfig>
-                    <commitDevelopmentVersionAtStart>true</commitDevelopmentVersionAtStart>
-                    <versionDigitToIncrement>1</versionDigitToIncrement>
-                    <commitMessages>
-                        <hotfixStartMessage>Update versions for hotfix v@{version}
-                        </hotfixStartMessage>
-                        <hotfixFinishMessage>Update for next development version @{version}
-                        </hotfixFinishMessage>
-                        <hotfixVersionUpdateMessage>Update to hotfix version @{version}
-                        </hotfixVersionUpdateMessage>
-                        <releaseStartMessage>Update versions for release v@{version}
-                        </releaseStartMessage>
-                        <releaseFinishMessage>Update for next development version @{version}
-                        </releaseFinishMessage>
-                        <releaseVersionUpdateMessage>Update for next development version
-                            @{version}
-                        </releaseVersionUpdateMessage>
-                    </commitMessages>
-                </configuration>
-            </plugin>
+            <!--                    </gitFlowConfig>-->
+            <!--                    <commitDevelopmentVersionAtStart>true</commitDevelopmentVersionAtStart>-->
+            <!--                    <versionDigitToIncrement>1</versionDigitToIncrement>-->
+            <!--                    <commitMessages>-->
+            <!--                        <hotfixStartMessage>Update versions for hotfix v@{version}-->
+            <!--                        </hotfixStartMessage>-->
+            <!--                        <hotfixFinishMessage>Update for next development version @{version}-->
+            <!--                        </hotfixFinishMessage>-->
+            <!--                        <hotfixVersionUpdateMessage>Update to hotfix version @{version}-->
+            <!--                        </hotfixVersionUpdateMessage>-->
+            <!--                        <releaseStartMessage>Update versions for release v@{version}-->
+            <!--                        </releaseStartMessage>-->
+            <!--                        <releaseFinishMessage>Update for next development version @{version}-->
+            <!--                        </releaseFinishMessage>-->
+            <!--                        <releaseVersionUpdateMessage>Update for next development version-->
+            <!--                            @{version}-->
+            <!--                        </releaseVersionUpdateMessage>-->
+            <!--                    </commitMessages>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
         </plugins>
 
     </build>
