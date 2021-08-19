@@ -8,25 +8,25 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
-    <distributionManagement>
-        <!--        <snapshotRepository>-->
-        <!--            <id>platform-artifact-registry</id>-->
-        <!--            <url>artifactregistry://us-central1-maven.pkg.dev/PROJECT/quickstart-maven-repo</url>-->
-        <!--        </snapshotRepository>-->
+<!--    <distributionManagement>-->
+<!--        &lt;!&ndash;        <snapshotRepository>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <id>platform-artifact-registry</id>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <url>artifactregistry://us-central1-maven.pkg.dev/PROJECT/quickstart-maven-repo</url>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </snapshotRepository>&ndash;&gt;-->
 
-        <repository>
-            <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/Elie-kahwaji/release-test</url>
-        </repository>
-    </distributionManagement>
+<!--        <repository>-->
+<!--            <id>github</id>-->
+<!--            <name>GitHub OWNER Apache Maven Packages</name>-->
+<!--            <url>https://maven.pkg.github.com/Elie-kahwaji/release-test</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
 
     <scm>
         <connection>scm:git:https://github.com/Elie-kahwaji/release-test.git</connection>
         <url>http://github.com/Elie-kahwaji/release-test.git</url>
         <developerConnection>scm:git:https://github.com/Elie-kahwaji/release-test.git
         </developerConnection>
-        <tag>v@{project.version}</tag>
+        <tag>@{project.version}</tag>
     </scm>
 
 
@@ -85,8 +85,8 @@
                 <configuration>
                     <tagNameFormat>@{project.version}</tagNameFormat>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <releaseProfiles>releases</releaseProfiles>
-                    <pushChanges>true</pushChanges>
+                    <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+                    <remoteTagging>false</remoteTagging>
                 </configuration>
             </plugin>
             <plugin>
