@@ -109,7 +109,7 @@
                     <skipMergeDevBranch>false</skipMergeDevBranch>
                     <pushRemote>true</pushRemote>
                     <skipTag>false</skipTag>
-                    <keepBranch>true</keepBranch>
+                    <keepBranch>false</keepBranch>
                     <fetchRemote>false</fetchRemote>
                     <gitFlowConfig>
                         <productionBranch>master</productionBranch>
