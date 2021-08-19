@@ -26,13 +26,13 @@
         <url>http://github.com/Elie-kahwaji/release-test.git</url>
         <developerConnection>scm:git:https://github.com/Elie-kahwaji/release-test.git
         </developerConnection>
-        <tag>0.17.1</tag>
+        <tag>v@{project.version}</tag>
     </scm>
 
 
     <groupId>com.example</groupId>
     <artifactId>demo-release</artifactId>
-    <version>0.17.1</version>
+    <version>0.17.2-SNAPSHOT</version>
     <name>demo-release</name>
     <description>Demo project for Spring Boot</description>
     <properties>
