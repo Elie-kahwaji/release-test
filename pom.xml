@@ -73,6 +73,9 @@
                         <goals>
                             <goal>parse-version</goal>
                         </goals>
+                        <configuration>
+                            <propertyPrefix>parsedVersion</propertyPrefix>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -84,6 +87,7 @@
 
                 <configuration>
                     <tagNameFormat>@{project.version}</tagNameFormat>
+                    <preparationGoals>package</preparationGoals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
                     <remoteTagging>false</remoteTagging>
