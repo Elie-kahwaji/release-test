@@ -10,31 +10,31 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <distributionManagement>
-        <!--        <snapshotRepository>-->
-        <!--            <id>platform-artifact-registry</id>-->
-        <!--            <url>artifactregistry://us-central1-maven.pkg.dev/PROJECT/quickstart-maven-repo</url>-->
-        <!--        </snapshotRepository>-->
+    <!--    <distributionManagement>-->
+    <!--        &lt;!&ndash;        <snapshotRepository>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <id>platform-artifact-registry</id>&ndash;&gt;-->
+    <!--        &lt;!&ndash;            <url>artifactregistry://us-central1-maven.pkg.dev/PROJECT/quickstart-maven-repo</url>&ndash;&gt;-->
+    <!--        &lt;!&ndash;        </snapshotRepository>&ndash;&gt;-->
 
-        <repository>
-            <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/Elie-kahwaji/release-test</url>
-        </repository>
-    </distributionManagement>
+    <!--        <repository>-->
+    <!--            <id>github</id>-->
+    <!--            <name>GitHub OWNER Apache Maven Packages</name>-->
+    <!--            <url>https://maven.pkg.github.com/Elie-kahwaji/release-test</url>-->
+    <!--        </repository>-->
+    <!--    </distributionManagement>-->
 
     <scm>
         <connection>scm:git:https://github.com/Elie-kahwaji/release-test.git</connection>
         <url>http://github.com/Elie-kahwaji/release-test.git</url>
         <developerConnection>scm:git:https://github.com/Elie-kahwaji/release-test.git
         </developerConnection>
-        <tag>v@{project.version}</tag>
+        <tag>@{project.version}</tag>
     </scm>
 
 
     <groupId>com.example</groupId>
     <artifactId>demo-release</artifactId>
-    <version>0.13.0</version>
+    <version>0.23.0</version>
     <name>demo-release</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -65,19 +65,22 @@
             </plugin>
 
 
-            <!--            <plugin>-->
-            <!--                <groupId>org.codehaus.mojo</groupId>-->
-            <!--                <artifactId>build-helper-maven-plugin</artifactId>-->
-            <!--                <version>3.2.0</version>-->
-            <!--                <executions>-->
-            <!--                    <execution>-->
-            <!--                        <id>parse-version</id>-->
-            <!--                        <goals>-->
-            <!--                            <goal>parse-version</goal>-->
-            <!--                        </goals>-->
-            <!--                    </execution>-->
-            <!--                </executions>-->
-            <!--            </plugin>-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>parse-version</id>
+                        <goals>
+                            <goal>parse-version</goal>
+                        </goals>
+                        <configuration>
+                            <propertyPrefix>parsedVersion</propertyPrefix>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -86,8 +89,13 @@
 
                 <configuration>
                     <tagNameFormat>@{project.version}</tagNameFormat>
+                    <preparationGoals>package</preparationGoals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <releaseProfiles>releases</releaseProfiles>
+                    <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+                    <remoteTagging>false</remoteTagging>
+                    <developmentVersion>
+                        ${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.0-SNAPSHOT
+                    </developmentVersion>
                 </configuration>
             </plugin>
             <plugin>
@@ -100,9 +108,9 @@
                     <skipFeatureVersion>true</skipFeatureVersion>
                     <skipMergeDevBranch>false</skipMergeDevBranch>
                     <pushRemote>true</pushRemote>
-                    <skipTag>true</skipTag>
+                    <skipTag>false</skipTag>
                     <keepBranch>true</keepBranch>
-                    <fetchRemote>true</fetchRemote>
+                    <fetchRemote>false</fetchRemote>
                     <gitFlowConfig>
                         <productionBranch>master</productionBranch>
                         <developmentBranch>develop</developmentBranch>
