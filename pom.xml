@@ -32,7 +32,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>demo-release</artifactId>
-    <version>0.17.3-SNAPSHOT</version>
+    <version>0.17.4-SNAPSHOT</version>
     <name>demo-release</name>
     <description>Demo project for Spring Boot</description>
     <properties>
