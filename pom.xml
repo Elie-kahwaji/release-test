@@ -121,7 +121,7 @@
                         <origin>origin</origin>
 
                     </gitFlowConfig>
-                    <commitDevelopmentVersionAtStart>true</commitDevelopmentVersionAtStart>
+                    <commitDevelopmentVersionAtStart>false</commitDevelopmentVersionAtStart>
                     <versionDigitToIncrement>1</versionDigitToIncrement>
                     <commitMessages>
                         <hotfixStartMessage>Update versions for hotfix v@{version}
