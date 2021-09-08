@@ -35,5 +35,5 @@ jobs:
       with:
         maven-version: 3.5.4
     - name: Create Release branch   
-      run: mvn -B gitflow:release-start
+      run: mvn -B gitflow:release -DgitflowDigitToIncrement=2
    
