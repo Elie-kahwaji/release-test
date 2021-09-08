@@ -34,7 +34,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>demo-release</artifactId>
-    <version>0.27.0</version>
+    <version>0.28.0-SNAPSHOT</version>
     <name>demo-release</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -110,7 +110,8 @@
                     <pushRemote>true</pushRemote>
                     <skipTag>false</skipTag>
                     <keepBranch>false</keepBranch>
-                    <fetchRemote>false</fetchRemote>
+                    <fetchRemote>true</fetchRemote>
+                         <releaseRebase>true</releaseRebase>
                     <gitFlowConfig>
                         <productionBranch>master</productionBranch>
                         <developmentBranch>develop</developmentBranch>
@@ -121,7 +122,7 @@
                         <origin>origin</origin>
 
                     </gitFlowConfig>
-                    <commitDevelopmentVersionAtStart>true</commitDevelopmentVersionAtStart>
+                    <commitDevelopmentVersionAtStart>false</commitDevelopmentVersionAtStart>
                     <versionDigitToIncrement>1</versionDigitToIncrement>
                     <commitMessages>
                         <hotfixStartMessage>Update versions for hotfix v@{version}
