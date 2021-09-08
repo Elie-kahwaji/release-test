@@ -110,7 +110,7 @@
                     <pushRemote>true</pushRemote>
                     <skipTag>false</skipTag>
                     <keepBranch>false</keepBranch>
-                    <fetchRemote>false</fetchRemote>
+                    <fetchRemote>true</fetchRemote>
                     <gitFlowConfig>
                         <productionBranch>master</productionBranch>
                         <developmentBranch>develop</developmentBranch>
