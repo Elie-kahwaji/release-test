@@ -111,7 +111,6 @@
                     <skipTag>false</skipTag>
                     <keepBranch>false</keepBranch>
                     <fetchRemote>true</fetchRemote>
-                         <releaseRebase>true</releaseRebase>
                     <gitFlowConfig>
                         <productionBranch>master</productionBranch>
                         <developmentBranch>develop</developmentBranch>
