@@ -15,10 +15,11 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
+      with:
+       fetch-depth: 0
     - run: git config --global user.email "workflow@example.com"
     - run: git config --global user.name "Workflow"
-    - with:
-       fetch-depth: 0
+    
     - uses: actions/cache@v2
       with:
         path: ~/.m2/repository
